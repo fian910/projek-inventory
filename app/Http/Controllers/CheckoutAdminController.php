@@ -12,7 +12,7 @@ class CheckoutController extends Controller
     {
         // Menampilkan semua barang dari inventaris
         $inventories = Inventory::all();
-        return view('user.checkout.index', compact('inventories'));
+        return view('admin.checkout.index', compact('inventories'));
     }
 
     // Menyimpan transaksi dan mengurangi stok

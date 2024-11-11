@@ -10,12 +10,12 @@ class InventoryController extends Controller
     public function index()
     {
         $inventories = Inventory::paginate(10);
-        return view('inventories.index', compact('inventories'));
+        return view('admin.inventories.index', compact('inventories'));
     }
 
     public function create()
     {
-        return view('inventories.create');
+        return view('admin.inventories.create');
     }
 
     public function store(Request $request)
@@ -32,13 +32,13 @@ class InventoryController extends Controller
     // Flash message
     session()->flash('success', 'Barang berhasil ditambahkan!');
 
-    return redirect()->route('inventories.index');
+    return redirect()->route('admin.inventories.index');
 }
 
     public function edit($id)
     {
         $inventory = Inventory::findOrFail($id);
-        return view('inventories.edit', compact('inventory'));
+        return view('admin.inventories.edit', compact('inventory'));
     }
 
     public function update(Request $request, $id)
@@ -55,11 +55,11 @@ class InventoryController extends Controller
         // Flash message
         session()->flash('success', 'Barang berhasil diperbarui!');
     
-        return redirect()->route('inventories.index');
+        return redirect()->route('admin.inventories.index');
     }
     public function destroy($id)
     {
         Inventory::destroy($id);
-        return redirect()->route('inventories.index')->with('success', 'Barang berhasil dihapus');
+        return redirect()->route('admin.inventories.index')->with('success', 'Barang berhasil dihapus');
     }
 }

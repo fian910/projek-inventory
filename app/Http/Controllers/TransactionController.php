@@ -102,7 +102,7 @@ class TransactionController extends Controller
                 'average_amount' => $query->avg('total_harga') ?? 0
             ];
 
-            return view('transactions.index', compact('transactions', 'summary'));
+            return view('admin.transactions.index', compact('transactions', 'summary'));
 
         } catch (\Exception $e) {
             Log::error('Transaction Index Error: ' . $e->getMessage());

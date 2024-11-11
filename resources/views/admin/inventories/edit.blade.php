@@ -9,7 +9,7 @@
 
             <!-- Form Card -->
             <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                <form action="{{ route('inventories.update', $inventory->id) }}" method="POST" class="p-6 space-y-6">
+                <form action="{{ route('admin.inventories.update', $inventory->id) }}" method="POST" class="p-6 space-y-6">
                     @csrf
                     @method('PUT')
                     
